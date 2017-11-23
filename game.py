@@ -1,4 +1,5 @@
 # 3 card poker
+import fileinput
 
 # dictionary of card ranks
 rank = {
@@ -19,12 +20,11 @@ rank = {
 
 hands = [];
 
-with open("tests/01") as f:
-    for line in f:
-        # remove unwanted input and insert into hands
-        hand = line.split()
-        if (len(hand) == 4 and len(hand[0]) == 1):
-            hands.append(hand)
+for line in fileinput.input():
+    # remove unwanted input and insert into hands
+    hand = line.split()
+    if (len(hand) == 4 and len(hand[0]) == 1):
+        hands.append(hand)
 
 # Loop through the list of hands and append two values, one - the type, ie
 # straight flush, pair, etc., the other value - the highest card in the hand
