@@ -23,7 +23,8 @@ hands = [];
 for line in fileinput.input():
     # remove unwanted input and insert into hands
     hand = line.split()
-    if (len(hand) == 4 and len(hand[0]) == 1):
+    if (len(hand) == 4 and len(hand[0]) == 1 and len(hand[1]) == 2 and
+            len(hand[2]) == 2 and len(hand[0]) == 1):
         hands.append(hand)
 
 # Loop through the list of hands and append two values, one - the type, ie
