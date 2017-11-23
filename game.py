@@ -1,5 +1,4 @@
 # 3 card poker
-import sys
 
 # dictionary of card ranks
 rank = {
@@ -20,7 +19,7 @@ rank = {
 
 hands = [];
 
-with open("tests/01") as f:
+with open("tests/02") as f:
     for line in f:
         # remove unwanted input and insert into hands
         hand = line.split()
@@ -83,17 +82,31 @@ for hand in hands:
        hand.append(cards[2])
 
 # loop through hands and determine winner
-# initialize winner to first hand
-winner = [hands[0][0], hand[0][4], hand[0][5]]
-for hand in hands[1:]:
-    if hand[4] > winner[1]:    # bigger hand
-        winner = [hand[0],hand[4],hand[5]]
-    
-    elif hand[4] == winner[1] and hand[5] > winner[2]:2
-        
+# initialize highest hand to first hand
+highest = [hands[0][4], hands[0][5]]
 
-for hand in hands:
-    print (hand)
+# initialize store for winners / duplicates
+store = [hands[0][0]]
+
+# comparison phase
+for hand in hands[1:]:
+    if hand[4] > highest[0]:    # bigger hand
+        highest = [hand[4],hand[5]]
+        del store[:]
+        store.append(hand[0])
+
+    # equal hands - compare highest card
+    elif hand[4] == highest[0] and hand[5] > highest[1]:
+        highest = [hand[4],hand[5]]
+        del store[:]
+        store.append(hand[0])        
+        
+    elif hand[4] == highest[0] and hand[5] == highest[1]:
+        store.append(hand[0])
+
+# print winners
+for win in store:
+    print (win)
 
 
 
