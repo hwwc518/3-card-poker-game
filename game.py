@@ -19,7 +19,7 @@ rank = {
 
 hands = [];
 
-with open("tests/02") as f:
+with open("tests/01") as f:
     for line in f:
         # remove unwanted input and insert into hands
         hand = line.split()
@@ -104,9 +104,11 @@ for hand in hands[1:]:
     elif hand[4] == highest[0] and hand[5] == highest[1]:
         store.append(hand[0])
 
+# for hand in hands:
+#     print (hand)
+
 # print winners
-for win in store:
-    print (win)
+print (*store)
 
 
 
