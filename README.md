@@ -1,12 +1,12 @@
-"Mark43 Poker" Judger
+"3-Card Poker" Judger
 =====================
 
-Your task is to implement a program that accepts as its input a collection of hands of cards, and selects the winner from among those hands.
+Program accepts as its input a collection of hands of cards, and selects the winner from among those hands.
 
 Input Format
 ------------
 
-The input should be read over `stdin`. Some of the lines will contain collections of cards. These cards will be represented in the format format `<rank><Suit>`. rank will be one of:
+The input is read over `stdin`. Some of the lines will contain collections of cards. These cards will be represented in the format format `<rank><Suit>`. rank will be one of:
 
 * an integer from `2` to `9` for numbered cards less than ten
 * `T` for ten
@@ -41,7 +41,7 @@ An example input is as follows:
 Output Format
 -------------
 
-The output, printed to `stdout`, should simply be the id of the winning player. In the example above, the correct output would be:
+The output, printed to `stdout`, is the id of the winning player. In the example above, the correct output would be:
 
 ```
 2
@@ -65,7 +65,7 @@ the correct output would be:
 ```
 as those two players have equivalent hands (flushes, with a ten, a nine, and a three).
 
-"Mark43 Poker" Rules
+"3-Card Poker" Rules
 ----------------------
 
 The winner of a round of  is the player with the best hand. The possible types of hands, ranked best to worst, are as follows:
@@ -86,18 +86,8 @@ When comparing hands of the same type, the winner is the hand whose highest card
 
 The exception to this comes when comparing pairs. If two hands are both a pair, the winning hand is the hand that has a higher pair. For example `8c 8h 4d` beats `5s 5h 2h` because the pair of `8`s beats the pair of `5`s. If the pair is tied, then the remaining card is used to decide the winner.
 
-(Mark43 poker is actually just 3 Card Poker. You can read more about it [in this wikipedia article.](https://en.wikipedia.org/wiki/Three_card_poker))
-
 Using the test runner
 ----------------------
 
-We have provided the test runner that we will use to check your solution, along with two sample tests. We have many more tests that we will run internally, so passing the two we sent _does not_ imply that your solution is correct/complete.
-
 To run the tests, first perform any compilation or preprocessing that your solution requires, then use the `run_tests` python script and pass the command that runs your program in as a string argument. For example, if your test is a python file called `poker.py` then you might run `./run_tests "python poker.py"`. Make sure you run this from the directory that the `run_tests` script is located in. Feel free to reach out to us if you have any problems using the test runner.
 
-What to submit
---------------
-
-Your submission should be a zip file containing all the files needed to compile/run your submission, as well as a plain text file titled `README` which should include instructions on how to compile/run your submission along with any notes you think are relevant about design decisions and/or known bugs and limitations in your submission. Please be very explicit in the `README` about how to run your test. Additionally, your program should be able to run all of the included tests using the `run_tests` script included. It is what we will use to grade your test, so if it doesn't run with `run_tests`, then it won't run for us.
-
-If your test requires compilation prior to being run, please include instructions on how to do so. A Makefile is not required, but would be appreciated if the compilation is a multi-step process.
