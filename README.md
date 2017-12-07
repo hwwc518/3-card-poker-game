@@ -89,5 +89,5 @@ The exception to this comes when comparing pairs. If two hands are both a pair, 
 Using the test runner
 ----------------------
 
-To run the tests, first perform any compilation or preprocessing that your solution requires, then use the `run_tests` python script and pass the command that runs your program in as a string argument. For example, if your test is a python file called `poker.py` then you might run `./run_tests "python poker.py"`. Make sure you run this from the directory that the `run_tests` script is located in. Feel free to reach out to us if you have any problems using the test runner.
+Run `./run_tests "python game.py"`. 
 
